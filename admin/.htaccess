@@ -1,0 +1,5 @@
+Options +FollowSymLinks +ExecCGI
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI}  !(/img/|/css/|/js/|/fonts/)
+RewriteRule (.*) Index.php [QSD,L]

@@ -14,7 +14,7 @@
 
       Home::mapRoutes($router);
       Categories::mapRoutes($router);
-      //Courses::mapRoutes($router);
+      Courses::mapRoutes($router);
 
       $router->serve();
     }
