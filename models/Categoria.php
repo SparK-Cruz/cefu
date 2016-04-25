@@ -8,14 +8,11 @@
     }
 
     public function findBySlug($slug){
-      $success = $this->find(array(
+      $this->find(array(
         "where" => "slug = :slug",
         "slug" => $slug
       ));
 
-      if($success)
-        $this->first();
-
-      return $success;
+      $this->first();
     }
   }

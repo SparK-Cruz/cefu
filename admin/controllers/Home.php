@@ -44,18 +44,22 @@
       $model = new AdminPaginaEstatica(Connection::get());
       $model->findBySlug("inicio");
 
-      $model->titulo = $args->titulo;
-      $model->conteudo = $args->conteudo;
+      $model->titulo = $_POST["titulo"];
+      $model->conteudo = $_POST["conteudo"];
 
       $view = new View("views/home/editIndex.html.php");
 
       try{
         $storage = dirname(dirname(__DIR__))."/img";
 
-        if(isset($_FILES["imagem"])){
-          $image = new Image($_FILES["imagem"]["temp_name"]);
+        if($_FILES["imagem"]["name"] !== ""){
+          $image = new Image($_FILES["imagem"]["tmp_name"]);
           $filename = $_FILES["imagem"]["name"];
-          $filename = $storage."/index.".substr($filename, strrpos($filename, '.'));
+          $filename = $storage."/index".substr($filename, strrpos($filename, '.'));
+
+          if(file_exists($filename))
+            unlink($filename);
+
           $image->setName($filename);
           $image->save();
 
@@ -87,18 +91,22 @@
       $model = new AdminPaginaEstatica(Connection::get());
       $model->findBySlug("sobre");
 
-      $model->titulo = $args->titulo;
-      $model->conteudo = $args->conteudo;
+      $model->titulo = $_POST["titulo"];
+      $model->conteudo = $_POST["conteudo"];
 
       $view = new View("views/home/editAbout.html.php");
 
       try{
         $storage = dirname(dirname(__DIR__))."/img";
 
-        if(isset($_FILES["imagem"])){
-          $image = new Image($_FILES["imagem"]["temp_name"]);
+        if($_FILES["imagem"]["name"] !== ""){
+          $image = new Image($_FILES["imagem"]["tmp_name"]);
           $filename = $_FILES["imagem"]["name"];
-          $filename = $storage."/index.".substr($filename, strrpos($filename, '.'));
+          $filename = $storage."/about".substr($filename, strrpos($filename, '.'));
+
+          if(file_exists($filename))
+            unlink($filename);
+
           $image->setName($filename);
           $image->save();
 
@@ -139,19 +147,23 @@
 
       $view = new View("views/home/editContact.html.php");
 
-      $model->titulo = $args->titulo;
-      $model->conteudo = $args->conteudo;
-      $contact->email = $args->email;
+      $model->titulo = $_POST["titulo"];
+      $model->conteudo = $_POST["conteudo"];
+      $contact->email = $_POST["email"];
 
-      $view->email = $args->email;
+      $view->email = $contact->email;
 
       try{
         $storage = dirname(dirname(__DIR__))."/img";
 
-        if(isset($_FILES["imagem"])){
-          $image = new Image($_FILES["imagem"]["temp_name"]);
+        if($_FILES["imagem"]["name"] !== ""){
+          $image = new Image($_FILES["imagem"]["tmp_name"]);
           $filename = $_FILES["imagem"]["name"];
-          $filename = $storage."/index.".substr($filename, strrpos($filename, '.'));
+          $filename = $storage."/contact".substr($filename, strrpos($filename, '.'));
+
+          if(file_exists($filename))
+            unlink($filename);
+
           $image->setName($filename);
           $image->save();
 

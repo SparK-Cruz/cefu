@@ -1,0 +1,149 @@
+html, body {
+  font-family: Arial, sans-serif;
+  margin: 0px;
+}
+
+header {
+  height: 115px;
+  background-color: #ffff55;
+  padding-top: 10px;
+}
+header h2 {
+  margin: 0px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  font-family: serif;
+  font-size: 1.8em;
+}
+header p {
+  padding: 0px 15px;
+  text-align: right;
+}
+header ul {
+  margin: 0px;
+  padding: 20px;
+  list-style: none;
+}
+header ul li {
+  float: left;
+  display: block;
+  margin-right: 20px;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  transition: margin 0.2s;
+}
+header ul li:hover {
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+header ul li a {
+  color: #dddddd;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #4444ff;
+  padding: 7px 12px;
+  border-radius: 5px;
+  border-bottom: 2px solid #1111cc;
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+
+  transition: box-shadow 0.2s;
+}
+header ul li:hover a {
+  color: #ffffff;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+}
+
+/* Content */
+
+div.content {
+  padding: 20px;
+  width: 960px;
+  margin: 0px auto;
+}
+form div {
+  margin-bottom: 15px;
+}
+form div label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.9em;
+  color: #666666;
+}
+form div input {
+  padding: 7px;
+}
+form div textarea {
+  padding: 7px;
+  width: 400px;
+  min-height: 300px;
+}
+
+div.content table {
+  margin-top: 100px;
+  width: 920px;
+}
+div.content table tr th{
+  border-bottom: 1px solid #000000;
+  text-align: left;
+}
+div.content table tr td {
+  padding: 10px;
+}
+div.content table tr td:last-child {
+  width: 170px;
+}
+
+div.content a {
+  display: inline-block;
+  float: left;
+
+  color: #dddddd;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #4444ff;
+  padding: 7px 12px;
+  border-radius: 5px;
+  border-bottom: 2px solid #1111cc;
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+
+  transition: box-shadow 0.2s, margin 0.2s;
+
+  margin-top: 3px;
+  margin-bottom: 0px;
+  margin-right: 20px;
+}
+
+div.content a:last-child {
+  margin-right: 0px;
+}
+
+div.content a:hover {
+  margin-top: 0px;
+  margin-bottom: 3px;
+
+  color: #ffffff;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+}
+
+a.warning,
+div.content a.warning {
+  background-color: #ff4400;
+  border-bottom-color: #cc1100;
+}
+
+div.content.login {
+  width: 250px;
+  margin: 0px auto;
+}
+div.content.login div input {
+  width: 250px;
+}
+div.content.login a {
+  color: #000000;
+  padding: 0px;
+  background-color: inherit;
+  border-bottom: none;
+  box-shadow: none;
+  font-size: 0.9em;
+}

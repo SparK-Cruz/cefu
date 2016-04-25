@@ -1,5 +1,5 @@
 <?php
-  class ApplicationController extends Controller{
+  abstract class ApplicationController extends Controller{
     public static function mustLogin($retorno){
       if(!isset($_SESSION["user"]) || $_SESSION["user"] == null){
         $_SESSION["retorno"] = $retorno;
@@ -7,4 +7,6 @@
         exit();
       }
     }
+
+    public abstract static function mapRoutes($router);
   }

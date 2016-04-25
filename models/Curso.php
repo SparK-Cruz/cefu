@@ -8,21 +8,25 @@
     }
 
     public function findBySlug($slug){
-      $success = $this->find(array(
+      $this->find(array(
         "where" => "slug = :slug",
         "slug" => $slug
       ));
 
-      if($success)
-        $this->first();
-
-      return $success;
+      $this->first();
     }
 
     public function findByCategoria($categoriaId){
       return $this->find(array(
         "where" => "categoria_id = :catid",
+        "order" => "nome ASC",
         "catid" => $categoriaId
       ));
+    }
+
+    public function getCategoria(){
+      $categoria = new Categoria($this->connection);
+      $categoria->findId($this->categoria_id);
+      return $categoria;
     }
   }

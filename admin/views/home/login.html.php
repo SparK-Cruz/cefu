@@ -5,11 +5,21 @@
 <html>
   <?php include("views/common/head.html.php"); ?>
   <body>
-    <p><?=$viewbag->message?></p>
-    <form method="post">
-      <input type="text" name="login" value="<?=$model->login?>" />
-      <input type="password" name="senha" value=""/>
-      <input type="submit" value="entrar" />
-    </form>
+    <div class="content login">
+      <h1>Entrar</h1>
+      <p><?=$viewbag->message?></p>
+      <form method="post">
+        <div>
+          <label>Usuário</label>
+          <input type="text" name="login" value="<?=$model->login?>" />
+        </div>
+        <div>
+          <label>Senha</label>
+          <input type="password" name="senha" value=""/>
+        </div>
+        <input type="submit" value="Entrar" />
+      </form>
+      <p><a href="<?=Router::route("")?>/../../">Voltar ao site</a></p>
+    </div>
   </body>
 </html>

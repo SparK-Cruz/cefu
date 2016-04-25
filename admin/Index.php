@@ -3,23 +3,24 @@
   require("../../../../elpho/startup.php");
 
   require("../db/Connection.php");
+
   requireDirOnce("php/io/file");
   requireDirOnce("mvc");
   requireDirOnce("database");
   requireDirOnce("models");
+
+  require("controllers/ApplicationController.php");
   requireDirOnce("controllers");
 
   class Index{
     public static function main($args=array()){
       $router = Router::getInstance(__DIR__);
 
-      print_r($_FILES);
-
       self::setupSinglePages();
 
       Home::mapRoutes($router);
-      //Categories::mapRoutes($router);
-      //Courses::mapRoutes($router);
+      Categories::mapRoutes($router);
+      Courses::mapRoutes($router);
 
       $router->serve();
     }

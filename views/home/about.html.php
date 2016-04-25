@@ -2,8 +2,16 @@
 <html>
   <?php include("views/common/head.html.php"); ?>
   <body>
-    <a href="<?=Router::route("inicio")?>">Início</a>
-    <h1><?=$model->titulo?></h1>
-    <div><?=$model->conteudo?></div>
+    <?php include("views/common/header.html.php"); ?>
+    <div class="content">
+      <div class="title about">
+        <h1><?=$model->titulo?></h1>
+      </div>
+      <article>
+        <h1><?=$model->titulo?></h1>
+        <div><?=$model->conteudo?></div>
+      </article>
+    </div>
+    <?php include("views/common/footer.html.php"); ?>
   </body>
 </html>

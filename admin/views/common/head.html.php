@@ -7,6 +7,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Painel<?=$title?></title>
+  <link rel="stylesheet" type="text/css" href="<?=Router::fileRoute("css/admin.css")?>" />
 </head>
 <?php
   }, $viewbag);

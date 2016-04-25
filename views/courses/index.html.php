@@ -1,5 +1,5 @@
 <?php
-  $viewbag->title = "Categorias";
+  $viewbag->title = "Cursos";
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,12 +8,12 @@
     <?php include("views/common/header.html.php"); ?>
     <div class="content">
       <article>
-        <h1>Categorias</h1>
+        <h1>Cursos</h1>
         <div class="block-container">
         <?php
-          $model->each(function($categoria){
+          $model->each(function($row){
         ?>
-        <a href="<?=Router::route("categorias/".$categoria->slug)?>" class="block"><?=$categoria->nome?></a>
+        <a href="<?=Router::route("cursos/".$row->slug)?>" class="block"><?=$row->nome?></a>
         <?php
           });
         ?>

@@ -3,6 +3,8 @@
   <?php include("views/common/head.html.php"); ?>
   <body>
     <?php include("views/common/header.html.php"); ?>
-    <h1>INDEX!!!</h1>
+    <div class="content">
+      <h1>Painel de Controle</h1>
+    </div>
   </body>
 </html>
