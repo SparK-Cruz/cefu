@@ -34,7 +34,8 @@
       deleteLinks.forEach(function(link){
         link.onclick = function(event){
           event.preventDefault();
-          link.parentNode.submit();
+          if(confirm("Deseja excluir a categoria?"))
+            link.parentNode.submit();
         };
       });
     </script>

@@ -1,5 +1,5 @@
 <?php
-  $viewbag->title = "Categiras - ".($model->id?"Editar":"Nova");
+  $viewbag->title = "Categorias - ".($model->id?"Editar":"Nova");
 ?>
 <!DOCTYPE html>
 <html>

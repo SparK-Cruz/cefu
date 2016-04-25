@@ -9,7 +9,7 @@
       </div>
       <article>
         <h1><?=$model->titulo?></h1>
-        <div><?=$model->conteudo?></div>
+        <div><p><?=formatContent($model->conteudo)?></p></div>
       </article>
     </div>
     <?php include("views/common/footer.html.php"); ?>

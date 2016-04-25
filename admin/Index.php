@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require("../../../../elpho/startup.php");
+  require("../../elpho/startup.php");
 
   require("../db/Connection.php");
 

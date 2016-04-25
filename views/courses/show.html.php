@@ -7,9 +7,12 @@
   <body>
     <?php include("views/common/header.html.php"); ?>
     <div class="content">
+      <div class="title solid">
+        <h1><?=$model->nome?></h1>
+      </div>
       <article>
         <h1><span><?=$model->getCategoria()->nome?></span><?=$model->nome?></h1>
-        <div><?=$model->descricao?></div>
+        <div><?=formatContent($model->descricao)?></div>
       </article>
     </div>
     <?php include("views/common/footer.html.php"); ?>

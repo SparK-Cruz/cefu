@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require("../../../elpho/startup.php");
+  require("../elpho/startup.php");
 
   require("db/Connection.php");
   requireDirOnce("mvc");
@@ -18,4 +18,8 @@
 
       $router->serve();
     }
+  }
+
+  function formatContent(String $string){
+    return $string->replace("\r", "")->replace("\n\n", "</p><p>")->replace("\n", "<br/>");
   }

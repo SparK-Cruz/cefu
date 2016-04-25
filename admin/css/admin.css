@@ -5,7 +5,7 @@ html, body {
 
 header {
   height: 115px;
-  background-color: #ffff55;
+  background-color: #cccccc;
   padding-top: 10px;
 }
 header h2 {
@@ -13,7 +13,7 @@ header h2 {
   margin-left: 20px;
   text-transform: uppercase;
   font-family: serif;
-  font-size: 1.8em;
+  font-size: 1.6em;
 }
 header p {
   padding: 0px 15px;
@@ -40,10 +40,10 @@ header ul li a {
   color: #dddddd;
   text-decoration: none;
   font-weight: bold;
-  background-color: #4444ff;
+  background-color: #3a3a3a;
   padding: 7px 12px;
   border-radius: 5px;
-  border-bottom: 2px solid #1111cc;
+  border-bottom: 2px solid #000000;
   box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
 
   transition: box-shadow 0.2s;
@@ -101,10 +101,10 @@ div.content a {
   color: #dddddd;
   text-decoration: none;
   font-weight: bold;
-  background-color: #4444ff;
+  background-color: #3a3a3a;
   padding: 7px 12px;
   border-radius: 5px;
-  border-bottom: 2px solid #1111cc;
+  border-bottom: 2px solid #000000;
   box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
 
   transition: box-shadow 0.2s, margin 0.2s;

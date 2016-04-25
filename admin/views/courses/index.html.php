@@ -36,7 +36,8 @@
       deleteLinks.forEach(function(link){
         link.onclick = function(event){
           event.preventDefault();
-          link.parentNode.submit();
+          if(confirm("Deseja excluir o curso?"))
+            link.parentNode.submit();
         };
       });
     </script>

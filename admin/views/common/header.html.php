@@ -11,5 +11,5 @@
       <li><a href="<?=Router::route("sair")?>" class="warning">Sair</a></li>
     </ul>
   </nav>
-  <p><a href="<?=Router::route("")?>/../../">Ver site</a></p>
+  <p><a href="<?=Router::route("")?>/../../" target="_blank">Ver site</a></p>
 </header>

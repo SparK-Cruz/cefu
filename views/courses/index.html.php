@@ -7,6 +7,9 @@
   <body>
     <?php include("views/common/header.html.php"); ?>
     <div class="content">
+      <div class="title solid">
+        <h1>Cursos</h1>
+      </div>
       <article>
         <h1>Cursos</h1>
         <div class="block-container">

@@ -9,7 +9,7 @@
       </div>
       <article>
         <h1><?=$model->titulo?></h1>
-        <div><?=$model->conteudo?></div>
+        <div><?=formatContent($model->conteudo)?></div>
         <form method="post">
           <div>
             <label>Nome</label>

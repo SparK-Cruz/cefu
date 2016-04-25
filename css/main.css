@@ -71,6 +71,17 @@ div.title.index {
 div.title.contact {
   background-image: url("../img/contact.jpg");
 }
+div.title.solid {
+  background-color: #003399;
+  height: 200px;
+}
+div.title.solid h1 {
+  line-height: 200px;
+}
+div.title.solid.red {
+  background-color: #991100;
+}
+
 div.content article {
   width: 960px;
   margin: 50px auto;
@@ -116,12 +127,14 @@ div.content form div textarea {
 div.content div.block-container {
   overflow: auto;
   clear: both;
+  line-height: 200px;
 }
 div.content a.block {
   display: block;
   float: left;
-  height: 70px;
-  width: 120px;
+  height: 90px;
+  line-height: 20px;
+  width: 140px;
   border-radius: 3px;
   margin: 10px;
   text-align: center;
@@ -131,11 +144,11 @@ div.content a.block {
   text-decoration: none;
   font-weight: bold;
   box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.4);
-  transition: box-shadow 0.2s, margin 0.2s;
+  transition: box-shadow 0.2s; /*, margin 0.2s; */
 }
 div.content a.block:hover {
-  margin-top: 7px;
-  margin-bottom: 13px;
+  margin-top: 8px;
+  margin-bottom: 12px;
   box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.4);
 }
 div.content a.block:nth-child(3n+1) {
@@ -145,7 +158,7 @@ div.content a.block:nth-child(3n+2) {
   background-color: #ffffdd;
 }
 div.content a.block:nth-child(3n+3) {
-  background-color: #aaddff;
+  background-color: #ddddff;
 }
 
 footer {
@@ -175,6 +188,12 @@ footer nav ul li a {
 footer nav ul li a:hover {
   text-decoration: underline;
   color: #000000;
+}
+footer nav ul li a.small {
+  font-size: 0.5em;
+}
+footer nav ul li a.small:hover {
+  text-decoration: none;
 }
 footer p {
   font-size: 0.8em;

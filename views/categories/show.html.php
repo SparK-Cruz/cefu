@@ -7,9 +7,12 @@
   <body>
     <?php include("views/common/header.html.php"); ?>
     <div class="content">
+      <div class="title solid red">
+        <h1><?=$model->nome?></h1>
+      </div>
       <article>
         <h1><?=$model->nome?></h1>
-        <div><?=$model->descricao?></div>
+        <div><?=formatContent($model->descricao)?></div>
         <h3>Cursos</h3>
         <div class="block-container">
         <?php
