@@ -73,7 +73,7 @@
         self::notFound();
 
       $model = new AdminCurso(Connection::get());
-      $model->find($args->id);
+      $model->findId($args->id);
       $model->delete();
 
       self::redirect("cursos");
