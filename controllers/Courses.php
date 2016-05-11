@@ -20,8 +20,7 @@
       $model = new Curso(Connection::get());
       $model->findBySlug($args->slug);
 
-      $categoria = new Categoria(Connection::get());
-      $categoria->findId($model->categoria_id);
+      $categoria = $model->getCategoria();
 
       $view = new View("views/courses/show.html.php");
       $view->categoria = $categoria;

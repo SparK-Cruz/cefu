@@ -11,7 +11,7 @@
         <h1><?=$model->nome?></h1>
       </div>
       <article>
-        <h1><span><?=$model->getCategoria()->nome?></span><?=$model->nome?></h1>
+        <h1><span><?=$viewbag->categoria->nome?></span><?=$model->nome?></h1>
         <div><?=formatContent($model->descricao)?></div>
       </article>
     </div>
