@@ -1,25 +1,45 @@
 <?php
   session_start();
-  require("../elpho/startup.php");
+  require('vendor/autoload.php');
 
-  require("db/Connection.php");
-  requireDirOnce("mvc");
-  requireDirOnce("database");
-  requireDirOnce("models");
-  requireDirOnce("controllers");
+  use elpho\di\DependencyInjector;
+  use elpho\mvc\Router;
+  use elpho\database\EntityProvider;
+
+  use cefu\db\Connection;
 
   class Index{
     public static function main($args=array()){
+      elpho\mvc\View::addHelper("cefu\helpers\content");
+
+
+      $di = new DependencyInjector();
       $router = Router::getInstance(__DIR__);
 
-      Home::mapRoutes($router);
-      Categories::mapRoutes($router);
-      Courses::mapRoutes($router);
+      $router->setDependencyInjector($di);
+
+      self::registerModelProviders($di);
+      self::mapRoutes($router);
 
       $router->serve();
     }
-  }
 
-  function formatContent(String $string){
-    return $string->replace("\r", "")->replace("\n\n", "</p><p>")->replace("\n", "<br/>");
+    public static function registerModelProviders(DependencyInjector $di){
+      $connection = Connection::get();
+
+      $categoriaProvider = new EntityProvider($connection, "cefu\models\Categoria");
+      $contatoProvider = new EntityProvider($connection, "cefu\models\Contato");
+      $cursoProvider = new EntityProvider($connection, "cefu\models\Curso");
+      $paginaEstaticaProvider = new EntityProvider($connection, "cefu\models\PaginaEstatica");
+
+      $di->registerProvider($categoriaProvider);
+      $di->registerProvider($contatoProvider);
+      $di->registerProvider($cursoProvider);
+      $di->registerProvider($paginaEstaticaProvider);
+    }
+    public static function mapRoutes(Router $router){
+      $router->mapFor("cefu\controllers\Home");
+      $router->mapFor("cefu\controllers\Categories");
+      $router->mapFor("cefu\controllers\Courses");
+    }
   }

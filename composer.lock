@@ -1,0 +1,232 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "34d70ad99e23149ff79b82587eb30c1e",
+    "content-hash": "fe50c036e0619210449da6c1cf0661c9",
+    "packages": [
+        {
+            "name": "elpho/database",
+            "version": "0.1.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elpho/database.git",
+                "reference": "c344e2dc760016558290e2cb49585437592bb3ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elpho/database/zipball/c344e2dc760016558290e2cb49585437592bb3ec",
+                "reference": "c344e2dc760016558290e2cb49585437592bb3ec",
+                "shasum": ""
+            },
+            "require": {
+                "elpho/di": "0.1.*",
+                "elpho/event": "0.1.*",
+                "elpho/lang": "0.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "elpho\\database\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "ORM for the elpho framework",
+            "time": "2016-10-17 03:15:35"
+        },
+        {
+            "name": "elpho/di",
+            "version": "0.1.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elpho/di.git",
+                "reference": "8142fe1702c1a382586c31a832eed9fb9f70a69c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elpho/di/zipball/8142fe1702c1a382586c31a832eed9fb9f70a69c",
+                "reference": "8142fe1702c1a382586c31a832eed9fb9f70a69c",
+                "shasum": ""
+            },
+            "require": {
+                "elpho/lang": "0.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "elpho\\di\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "Dependency injection engine for the elpho framework",
+            "time": "2016-10-16 20:42:47"
+        },
+        {
+            "name": "elpho/elpho",
+            "version": "0.1.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elpho/elpho.git",
+                "reference": "d39bcc10ab708aafb71ae9afae4fe7dc66c5dea5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elpho/elpho/zipball/d39bcc10ab708aafb71ae9afae4fe7dc66c5dea5",
+                "reference": "d39bcc10ab708aafb71ae9afae4fe7dc66c5dea5",
+                "shasum": ""
+            },
+            "require": {
+                "elpho/lang": "0.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "elpho\\system\\": "src/system/"
+                },
+                "files": [
+                    "startup.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "The elpho framework core",
+            "time": "2016-10-17 03:44:22"
+        },
+        {
+            "name": "elpho/event",
+            "version": "0.1.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elpho/event.git",
+                "reference": "67f75af08408d82f3bd3d7f49906a07dd73f795a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elpho/event/zipball/67f75af08408d82f3bd3d7f49906a07dd73f795a",
+                "reference": "67f75af08408d82f3bd3d7f49906a07dd73f795a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "elpho\\event\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "Event system for the elpho framework",
+            "time": "2016-10-10 13:09:03"
+        },
+        {
+            "name": "elpho/io",
+            "version": "0.1.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elpho/io.git",
+                "reference": "18d3dc322b05a13151f316dce6ca6b32bcab3466"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elpho/io/zipball/18d3dc322b05a13151f316dce6ca6b32bcab3466",
+                "reference": "18d3dc322b05a13151f316dce6ca6b32bcab3466",
+                "shasum": ""
+            },
+            "require": {
+                "elpho/lang": "0.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "elpho\\io\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "IO utils for the elpho framework",
+            "time": "2016-10-10 13:36:30"
+        },
+        {
+            "name": "elpho/lang",
+            "version": "0.1.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elpho/lang.git",
+                "reference": "05c83f05b267cc7f2777a0f92743fc05179c1867"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elpho/lang/zipball/05c83f05b267cc7f2777a0f92743fc05179c1867",
+                "reference": "05c83f05b267cc7f2777a0f92743fc05179c1867",
+                "shasum": ""
+            },
+            "require": {
+                "elpho/event": "0.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "elpho\\lang\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "Language extensions for the elpho framework",
+            "time": "2016-10-10 13:37:18"
+        },
+        {
+            "name": "elpho/mvc",
+            "version": "0.1.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elpho/mvc.git",
+                "reference": "930ce0a8c10ea5ae6dc5600b2860d56cb99f3130"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elpho/mvc/zipball/930ce0a8c10ea5ae6dc5600b2860d56cb99f3130",
+                "reference": "930ce0a8c10ea5ae6dc5600b2860d56cb99f3130",
+                "shasum": ""
+            },
+            "require": {
+                "elpho/di": "0.1.*",
+                "elpho/lang": "0.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "elpho\\mvc\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "MVC module for the elpho framework",
+            "time": "2016-10-17 03:22:45"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,38 +1,53 @@
 <?php
   session_start();
-  require("../../elpho/startup.php");
+  require 'vendor/autoload.php';
 
-  require("../db/Connection.php");
+  use elpho\mvc\Router;
+  use elpho\di\DependencyInjector;
+  use elpho\database\EntityProvider;
 
-  requireDirOnce("php/io/file");
-  requireDirOnce("mvc");
-  requireDirOnce("database");
-  requireDirOnce("models");
-
-  require("controllers/ApplicationController.php");
-  requireDirOnce("controllers");
+  use cefu\admin\db\Connection;
 
   class Index{
     public static function main($args=array()){
+      $di = new DependencyInjector();
+      self::setupDependencyInjector($di);
+
       $router = Router::getInstance(__DIR__);
+      $router->setDependencyInjector($di);
 
-      self::setupSinglePages();
+      $di->inject(new \ReflectionMethod("Index::setupSinglePages"));
 
-      Home::mapRoutes($router);
-      Categories::mapRoutes($router);
-      Courses::mapRoutes($router);
+      $router->mapFor('cefu\admin\controllers\Home');
+      $router->mapFor('cefu\admin\controllers\Categories');
+      $router->mapFor('cefu\admin\controllers\Courses');
 
       $router->serve();
     }
 
-    private static function setupSinglePages(){
-      $static = new AdminPaginaEstatica(Connection::get());
+    private static function setupDependencyInjector(DependencyInjector $di){
+      $connection = Connection::get();
+
+      $categoriaProvider = new EntityProvider($connection, 'cefu\admin\models\Categoria');
+      $contatoProvider = new EntityProvider($connection, 'cefu\admin\models\Contato');
+      $cursoProvider = new EntityProvider($connection, 'cefu\admin\models\Curso');
+      $paginaEstaticaProvider = new EntityProvider($connection, 'cefu\admin\models\PaginaEstatica');
+      $usuarioProvider = new EntityProvider($connection, 'cefu\admin\models\Usuario');
+
+      $di->registerProvider($categoriaProvider);
+      $di->registerProvider($contatoProvider);
+      $di->registerProvider($cursoProvider);
+      $di->registerProvider($paginaEstaticaProvider);
+      $di->registerProvider($usuarioProvider);
+    }
+
+    public static function setupSinglePages($paginaEstatica, $contato){
+      $static = $paginaEstatica;
 
       self::setupStaticPage($static, "inicio");
       self::setupStaticPage($static, "sobre");
       self::setupStaticPage($static, "contato");
 
-      $contato = new AdminContato(Connection::get());
       $contato->findFirst();
       if($contato->getCount() == 0){
         $contato->reset();
