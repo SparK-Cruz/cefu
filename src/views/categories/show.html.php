@@ -12,7 +12,7 @@
       </div>
       <article>
         <h1><?=$model->nome?></h1>
-        <div><?=$content::format($model->descricao)?></div>
+        <div><p><?=$content::format($model->descricao)?></p></div>
         <h3>Cursos</h3>
         <div class="block-container">
         <?php
