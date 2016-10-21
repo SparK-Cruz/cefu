@@ -9,7 +9,7 @@
   class Home extends Controller{
     /**
     * @route()
-    * @route("inicio")
+    * @route(inicio)
     */
     public static function index($args, $paginaEstatica){
       $model = $paginaEstatica;
