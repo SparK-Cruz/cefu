@@ -49,7 +49,7 @@
       self::setupStaticPage($static, "contato");
 
       $contato->findFirst();
-      if($contato->getCount() == 0){
+      if(!$contato->isAvailable()){
         $contato->reset();
         $contato->email = "";
         $contato->save();
@@ -57,7 +57,7 @@
     }
     private static function setupStaticPage($entity, $slug){
       $entity->findBySlug($slug);
-      if($entity->getCount() == 0){
+      if(!$entity->isAvailable()){
         $entity->reset();
         $entity->slug = $slug;
         $entity->titulo = "";
